@@ -1,0 +1,49 @@
+global:
+  title: OSW Crypto Fund
+  descr: Test text
+
+main:
+  hero: 
+    text: OSW Crypto Fund - паевой инвестиционный фонд, чей капитал используются командой трейдеров для активных торгов в криптовалютных рынках. Фонд создан командой разработчиков проекта 
+    btn-text: Подробнее
+    
+  navbar:
+    title: MENU
+    about: About us
+    traders: For traders
+    investors: For investors
+    groups:
+      about:
+        - title: History of the Fund
+          link: history
+        - title: Activity content
+          link: activity-content
+        - title: Reporting
+          link: reporting
+      traders:
+        - title: Agreement for traders
+          link: agreement
+      investors:
+        - title: Agreement with investors
+          link: agreement
+        - title: Instructions for working with tokens
+          link: instruction-tokens      
+
+  footer: 
+    about: 
+      descr: About us
+      history: History of the Fund
+      reporting: Reporting
+      content: Activity content
+    traders: 
+      descr: For traders
+      work: Principles of work of traders in the Fund
+      community: Community for traders
+    investors: 
+      descr: For investors
+      agreement: Public agreement with investors
+      info: Token information
+      app: Application for deposit of funds
+      req: Withdrawal request
+      work: Instructions for working with tokens
+      community: Investor Community

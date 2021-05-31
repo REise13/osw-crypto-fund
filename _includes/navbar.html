@@ -1,0 +1,98 @@
+
+<nav class="navbar navbar-expand-lg fixed-top nav-sticky">
+    <div class="container">
+        {% if page.lang == 'en' %}
+            <a class="navbar-brand" href="/">
+                <img src="/assets/img/osw-logo.svg" 
+                class="logo-dark" height="80" alt="osw logo image">
+            </a>
+        {% else %}
+            <a class="navbar-brand" href="/ru">
+                <img src="/assets/img/osw-logo.svg" 
+                class="logo-dark" height="80" alt="osw logo image">
+            </a>
+        {% endif %}
+        
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggle-icon">
+          <i data-feather="menu"></i>
+        </span>
+      </button>
+
+      <div class="dropdown position-fixed top-0 end-0 translate-middle me-5"
+      style="padding-right: 10px; padding-top: 106px;"
+      > 
+        <a href="#" id="LanguageList" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+          <img src="/assets/img/global.svg" height="24px" alt="">
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="LanguageList">
+          {% if en-url == nil %}
+            <li><a class="dropdown-item" href="/">English</a></li>
+          {% else %}  
+            <li><a class="dropdown-item" href="{{ en-url | absolute url }}">English</a></li>
+          {% endif %}
+          
+          {% if ru-url == nil %}
+              <a class="dropdown-item" href="/ru">Русский</a>
+          {% else %}
+              <a class="dropdown-item" href="{{ ru-url | absolute_url }}">Русский</a>
+          {% endif %}
+        </ul>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto navbar-center mt-lg-0 mt-2">
+          <li class="nav-item dropdown">
+            {% assign menu = site.data[page.lang].main.navbar %}
+            <a class="nav-link" 
+            href="#" id="navDropdownAbout" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{menu.about}}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navDropdownAbout">
+              {% for item in menu.groups.about %}
+                <li>
+                  <a class="dropdown-item" href="/{{page.lang}}/about/{{item.link}}/">{{item.title}}</a>
+                </li>
+              {% endfor %}  
+            </ul>  
+          </li>
+          <li class="nav-item dropdown"> 
+            <a class="nav-link" 
+            href="#" id="navDropdownTraders" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+              {{menu.traders}}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navDropdownTraders">
+              {% for item in menu.groups.traders %}
+                <li>
+                  <a class="dropdown-item" href="/{{page.lang}}/traders/{{item.link}}/">{{item.title}}</a>
+                </li>
+              {% endfor %}  
+            </ul> 
+          </li>
+          
+          <li class="nav-item dropdown"> 
+            <a class="nav-link" 
+            href="#" id="navDropdownInvestors" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+              {{menu.investors}}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navDropdownInvestors">
+              {% for item in menu.groups.investors %}
+                <li>
+                  <a class="dropdown-item" href="/{{page.lang}}/investors/{{item.link}}/">{{item.title}}</a>
+                </li>
+              {% endfor %}  
+            </ul> 
+          </li>  
+        </ul>
+      </div>
+    </div>
+
+  </nav>

@@ -1,0 +1,62 @@
+// 
+// button.scss
+// 
+
+// button properties
+.btn {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 20px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: none;
+    &:focus,
+    &:hover {
+        box-shadow: none;
+        transform: translateY(-2px);
+    }
+    &.btn-sm {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+}
+
+@each $color,$value in $color-pallete {
+    .btn-#{$color} {
+        background-color: ($value);
+        border: 1px solid ($value);
+        color: $white;
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            background-color: ($value);
+            color: ($color);
+        }
+    }
+    .btn-outline-#{$color} {
+        background-color: transparent;
+        border: 1px solid ($value);
+        color: $primary;
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            background-color: $primary;
+            color: $white;
+        }
+    }
+}
+
+// badge
+.badge-lg {
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+@each $color, $value in $color-pallete {
+    .bg-soft-#{$color} {
+        background-color: lighten($value, 26%);
+        color: ($value);
+    }
+}

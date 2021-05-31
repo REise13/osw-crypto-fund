@@ -1,0 +1,100 @@
+// 
+// general.scss
+// 
+$list: #36437c 0%, #13043d 100%;
+$list2: $secondary 0%, $primary 100%;
+
+@mixin gradient($direction, $list) { 
+    background: -webkit-linear-gradient($direction, $list);
+    background: -moz-linear-gradient($direction, $list);
+    background: -o-linear-gradient($direction, $list);
+    background: linear-gradient($direction, $list);  
+}
+
+body {
+    font-family: $font-primary;
+    color: $dark;
+    background: $body-bg;
+    line-height: 1.6;
+    font-size: 14.4px;
+}
+
+html {
+    scroll-padding-top: 66px;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+p {
+    margin-bottom: 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-secondary;
+}
+
+.row > * {
+    position: relative;
+}
+
+.img-post:hover{
+    cursor: pointer;
+}
+
+.header{
+    @include gradient(left, $list2);
+    color: $white;
+    font-size: 36px;
+}
+
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+// custom scrollbar
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background: $gray-400;
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 1rem;
+    background-color: $secondary;
+    @include gradient(to top, $list)
+}
+
+
+
+// list with custom numbers
+ol.numeric-list {
+    list-style: none;
+}
+
+ol.numeric-list li {
+    counter-increment: my-awesome-counter;
+    &::before {
+        content: counter(my-awesome-counter);
+        background: #2d386b;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: inline-block;
+        line-height: 30px;
+        color: $white;
+        text-align: center;
+        margin-right: 2px;
+        font-weight: bold;
+    }
+}
+
+dt {
+    color: #254261;
+}
+

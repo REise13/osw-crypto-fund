@@ -1,5 +1,5 @@
-url: "https://fund.opensourcewebsite.org/" # the base hostname & protocol for site
-baseurl: '' 
+url: "https://fund.opensourcewebsite.org" # the base hostname & protocol for site
+baseurl: ''
 title: "OSW Crypto Fund" # the name of site
 
 # Collections

@@ -1,0 +1,112 @@
+// 
+// hero.scss
+// 
+
+@mixin bg-center {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+$list: $secondary 0%, $primary 80%;
+
+@mixin gradient($direction, $list) { 
+    background: -webkit-linear-gradient($direction, $list);
+    background: -moz-linear-gradient($direction, $list);
+    background: -o-linear-gradient($direction, $list);
+    background: linear-gradient($direction, $list);  
+}
+
+.hero-block {
+    @include bg-center;
+    @include gradient(bottom, $list);
+    height: 100vh;
+    .hero-text {
+        letter-spacing: 16px;
+        &:before {
+            content: "";
+            width: 50px;
+            height: 2px;
+            background-color: rgba($white, 0.5);
+            position: absolute;
+            left: 270px;
+            bottom: 50%;
+            transform: translateX(-50%);
+        }
+        &:after {
+            content: "";
+            width: 50px;
+            height: 2px;
+            background-color: rgba($white, 0.5);
+            position: absolute;
+            right: 240px;
+            bottom: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    .clip-text {
+        font-size: 190px;
+        color: $white;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .clip-descr {
+        background-color: $white;
+    }
+}
+
+
+// breakpoints
+@media (max-width:576px) {
+    .hero-block {
+        height: auto;
+        padding: 160px 0 120px;
+
+        .hero-text{
+            letter-spacing: 3px;
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .hero-block {
+        height: auto;
+        padding: 160px 0 120px;
+        .clip-text {
+            font-size: 75px;
+        }
+    }
+}
+
+@media (max-width:1024px) {
+    .hero-block {
+       .hero-text {
+           &:before, &:after {
+               content: none;
+           }
+       } 
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1199.98px) {
+    .hero-block {
+        height: auto;
+        padding: 200px 0 180px;
+        .clip-text {
+            font-size: 140px;
+        }
+       .hero-text {
+           &:before, &:after {
+               content: none;
+           }
+       } 
+    }
+}
+ 
+
+
+
+
+

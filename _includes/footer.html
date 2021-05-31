@@ -1,0 +1,66 @@
+<!-- Footer section -->
+    <footer class="footer bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-sm-6">
+                    {% if page.lang == 'en' %}
+                        <a href="{{site.baseurl}}/">
+                            <img src="{{site.baseurl}}/assets/img/osw-logo.svg" height="80" alt="logo image" />
+                        </a>
+                    {% else %}
+                        <a href="{{site.baseurl}}/{{page.lang}}">
+                            <img src="{{site.baseurl}}/assets/img/osw-logo.svg" height="80" alt="logo image" />
+                        </a> 
+                    {% endif %}       
+                    <p class="mt-4 text-dark">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Iste natus quisquam commodi, illum, placeat voluptates voluptatibus 
+                        error suscipit aliquam odio eum qui sequi nisi mollitia omnis nobis beatae amet ut!
+                    </p>
+                </div>
+
+                {% assign footer = site.data[page.lang].main.footer %}
+                <div class="col-lg-2 offset-lg-2 col-sm-6">
+                    <h6 class="text-dark mb-4 mt-sm-0 mt-5">{{footer.about.descr}}</h6>
+                    <ul class="list-unstyled footer-list">
+                        <li><a href="{{site.baseurl}}/{{page.lang}}/about/history/">{{footer.about.history}}</a></li>
+                        <li><a href="{{site.baseurl}}/{{page.lang}}/about/activity-content/">{{footer.about.content}}</a></li>
+                        <li><a href="{{site.baseurl}}/{{page.lang}}/about/reporting/">{{footer.about.reporting}}</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-sm-6">
+                    <h6 class="text-dark mb-4 mt-sm-0 mt-4">{{footer.investors.descr}}</h6>
+                    <ul class="list-unstyled footer-list">
+                        <li><a href="{{site.baseurl}}/{{page.lang}}/investors/agreement/">{{footer.investors.agreement}}</a></li>
+                        <li><a href="https://stellar.expert/explorer/public/asset/OSW-GC45AYPXRDYKK75HFWH5CUANMDFLQW34ZAXD5ZRTIAGS262XSBTFTCLH">
+                            {{footer.investors.info}}</a></li>
+                        <li><a href="#">{{footer.investors.app}}</a></li>
+                        <li><a href="https://docs.google.com/forms/d/1I9wk80-Xe4A4wQ6yuDDXtFQfWbMZlHIK_kVOk5bVIA0/viewform?edit_requested=true">{{footer.investors.req}}</a></li>
+                        <li><a href="{{site.baseurl}}/{{page.lang}}/investors/instruction-tokens/">{{footer.investors.work}}</a></li>
+                        <li><a href="https://t.me/joinchat/qcNktV0YUlhkNjFl">{{footer.investors.community}}</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-sm-6">
+                    <h6 class="text-dark mb-4 mt-sm-0 mt-4">{{footer.traders.descr}}</h6>
+                    <ul class="list-unstyled footer-list">
+                        <li><a href="{{site.baseurl}}/{{page.lang}}/traders/agreement/">{{footer.traders.work}}</a></li>
+                        <li><a href="https://t.me/joinchat/11v-6oWR1TkxYTU9">{{footer.traders.community}}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Footer alter -->
+    <div class="footer-alt bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <p>2021 © OpenSourceWebsite</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end -->
+    
+<!-- end -->

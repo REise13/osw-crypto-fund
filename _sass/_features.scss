@@ -1,0 +1,33 @@
+// 
+// features.scss
+// 
+
+.feature-box {
+    transition: all 0.5s;
+    .feature-icon {
+        color: $primary;
+    }
+    a {
+        color: $primary;
+    }
+    .feature-title {
+        color: $dark;
+    }
+    .feature-subtitle {
+        color: $muted;
+    }
+    &:hover, &.active {
+        box-shadow: 3px 4px 12px rgba($gray-800, 0.06);
+        background-color: $primary;
+        transform: translateY(-0.5rem);
+        .feature-icon,
+        .feature-title,
+        a {
+            color: $white;
+            fill: rgba($white, 0.14);
+        }
+        .feature-subtitle {
+            color: rgba($white, 0.6);
+        }
+    }
+}
