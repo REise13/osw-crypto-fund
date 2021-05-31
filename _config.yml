@@ -1,1 +1,31 @@
-theme: jekyll-theme-cayman
+url: "https://fund.opensourcewebsite.org/" # the base hostname & protocol for site
+baseurl: '' 
+title: "OSW Crypto Fund" # the name of site
+
+# Collections
+collections:
+ en:
+  output: true
+  permalink: /en/:path/
+ ru:
+  output: true
+  permalink: /ru/:path/
+
+  
+defaults:
+#  for languages
+  - 
+    scope:
+      path: ""
+      type: "en" 
+    values:
+      lang: "en"
+  -
+    scope:
+      path: ""
+      type: "ru"
+    values:
+      lang: "ru"
+    
+sass:
+    style: compressed
